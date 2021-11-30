@@ -9,8 +9,29 @@
 <body>
     <h1>PIZZA JUAN</h1>
     <div>
-        <button id="orderHereButton">Ordene en línea aquí</button>
+        <button class="button-center" id="orderHereButton" data-bs-toggle="modal" data-bs-target="#takeoutModal">Ordene en línea aquí</button>
     </div>
-    <hr/>
+    <hr />
+
+    <div class="modal fade" id="takeoutModal" tabindex="-1" aria-labelledby="takeoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="takeoutModalLabel">¿Cómo va a escoger su orden?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <button class="button-center" id="expressOption">Express</button>
+                    </div>
+                    <br />
+                    <div>
+                        <button class="button-center" id="driveThroughOption">Para Llevar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <img src="~/images/home/pizzaHome.jpg" class="img-fluid" alt="Responsive image">
 </body>

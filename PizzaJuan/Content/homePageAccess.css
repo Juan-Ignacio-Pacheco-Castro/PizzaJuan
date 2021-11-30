@@ -3,17 +3,20 @@
     text-align: center;
 }
 
+.button-center {
+    margin: auto;
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
 #orderHereButton {
     background-color: white;
     border-color: #F48B4A;
     color: #F48B4A;
     height: 3rem;
     width: 16rem;
-    margin: auto;
-    position: relative;
-    left: 50%;
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
 }
 
 #orderHereButton:hover {
@@ -22,3 +25,47 @@
     color: white;
     cursor: pointer;
 }
+
+#takeoutModalLabel {
+    color: white;
+}
+
+.modal-content {
+    background-color: #F48B4A;
+}
+
+#driveThroughOption {
+    background-color: #A20021;
+}
+
+#expressOption {
+    background-color: #F9E784;
+    border-color: black;
+    color: black;
+    height: 3rem;
+    width: 16rem;
+}
+
+#expressOption:hover {
+    background-color: black;
+    border-color: black;
+    color: #F9E784;
+    cursor: pointer;
+}
+
+#driveThroughOption {
+    background-color: #A20021;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+}
+
+#driveThroughOption:hover {
+    background-color: white;
+    border-color: white;
+    color: #A20021;
+    cursor: pointer;
+}
+
+
