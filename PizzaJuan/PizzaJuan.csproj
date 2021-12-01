@@ -145,6 +145,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\createPizza.css" />
     <Content Include="Content\homePageAccess.css" />
     <Content Include="Content\layout.css" />
     <Content Include="favicon.ico" />
@@ -186,6 +187,7 @@
     <Content Include="Data_Files\Beverages.json" />
     <Content Include="Data_Files\Combos.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\createPizza.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -210,12 +212,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Pizza\CreatePizza.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Handlers\" />
-    <Folder Include="Views\ContentParser\" />
-    <Folder Include="Views\Pizza\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

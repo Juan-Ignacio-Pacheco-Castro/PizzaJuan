@@ -1,0 +1,48 @@
+﻿h1 {
+    color: #F48B4A;
+}
+
+#title {
+    text-align: center;
+}
+
+button {
+    background-color: white;
+    border-color: black;
+    color: black;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+}
+
+button:hover {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+#addToCart {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+}
+
+#addToCart:hover {
+    background-color: #AD693E;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+.debitAmount {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+}
