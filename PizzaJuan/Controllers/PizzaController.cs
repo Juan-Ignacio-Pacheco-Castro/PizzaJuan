@@ -11,11 +11,16 @@ namespace PizzaJuan.Controllers
     {
         public JsonParser JsonParser { get; set; }
 
+        public PizzaController() {
+            JsonParser = new JsonParser();
+        }
+
+
         public ActionResult CreatePizza()
         {
-            ViewBag.Bases = 
-
-
+            ViewBag.Bases = JsonParser.ParseFromJSON("Bases.json");
+            ViewBag.Sizes = JsonParser.ParseFromJSON("Sizes.json");
+            ViewBag.Ingredients = JsonParser.ParseFromJSON("Ingredients.json");
             return View();
         }
     }

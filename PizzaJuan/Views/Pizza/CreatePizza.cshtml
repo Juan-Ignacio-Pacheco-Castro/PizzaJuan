@@ -1,0 +1,63 @@
+﻿<head>
+    <link rel="stylesheet" href="~/Content/createPizza.css">
+</head>
+
+<body>
+    <h1 id="title">¡Crea tu pizza!</h1>
+
+    <h1>Tamaño</h1>
+    <div class="row d-flex">
+        @foreach (var item in ViewBag.Sizes) {
+            <div class="col-3 d-flex">
+                <button onclick="activeCheck()">@item.Name</button>
+            </div>
+        }
+    </div>
+    <h1>Elige la base de la pasta</h1>
+
+    <div class="row d-flex">
+        @foreach (var item in ViewBag.Bases) {
+            <div class="col-3 d-flex">
+                <button>@item.Name</button>
+            </div>
+        }
+    </div>
+
+    <div class="row d-flex">
+        <h1>Ingredientes de la pizza</h1>
+        @foreach (var item in ViewBag.Ingredients) {
+            <div class="col-3 d-flex">
+                <button>@item.Name</button>
+            </div>
+        }
+    </div>
+
+    <div class="row d-flex">
+        <div class="col-xl-4 offset-2">
+            <div class="debitAmount"></div>
+        </div>
+        <div class="col-xl-4 offset-1">
+            <button id="addToCart">Agregar</button>
+        </div>
+    </div>
+
+    <script>
+        function activeCheck(target, index) {
+            if (target.value == "0") {
+                target.classList.remove("btn-outline-success");
+                target.classList.add("btn-success");
+                target.value = "1";
+            } else {
+                target.classList.remove("btn-success");
+                target.classList.add("btn-outline-success");
+                target.value = "0";
+            }
+            if (index == 1) {
+                toggleDisplay();
+                updateStatistics();
+            }
+        }
+    </script>
+
+
+</body>
