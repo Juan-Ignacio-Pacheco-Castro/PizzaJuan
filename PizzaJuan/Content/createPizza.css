@@ -29,6 +29,7 @@ button:hover {
     height: 3rem;
     width: 16rem;
     margin: 0.5rem;
+    font-size: 25px;
 }
 
 #addToCart:hover {
@@ -38,11 +39,39 @@ button:hover {
     cursor: pointer;
 }
 
-.debitAmount {
+.debitAmountHolder {
     background-color: #F48B4A;
     border-color: white;
     color: white;
     height: 3rem;
     width: 16rem;
     margin: 0.5rem;
+    font-size: 25px;
+    text-align: center;
+}
+
+.debitAmount {
+    font-size: 25px;
+}
+
+.activeSelection {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+}
+
+#backMenu {
+    background-color: #A20021;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+}
+
+#backMenu:hover {
+    background-color: #6b2433;
+    border-color: white;
+    color: white;
+    cursor: pointer;
 }

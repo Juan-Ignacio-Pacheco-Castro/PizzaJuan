@@ -9,7 +9,7 @@
     <div class="row d-flex">
         @foreach (var item in ViewBag.Sizes) {
             <div class="col-3 d-flex">
-                <button onclick="activeCheck()">@item.Name</button>
+                <button class="size" onclick="activeCheck(this, 1)" value="@item.Value" name="0">@item.Name</button>
             </div>
         }
     </div>
@@ -18,7 +18,7 @@
     <div class="row d-flex">
         @foreach (var item in ViewBag.Bases) {
             <div class="col-3 d-flex">
-                <button>@item.Name</button>
+                <button class="pastaBase" onclick="activeCheck(this, 2)" value="@item.Value" name="0">@item.Name</button>
             </div>
         }
     </div>
@@ -27,37 +27,21 @@
         <h1>Ingredientes de la pizza</h1>
         @foreach (var item in ViewBag.Ingredients) {
             <div class="col-3 d-flex">
-                <button>@item.Name</button>
+                <button class="ingredient" onclick="activeCheck(this, 3)" value="@item.Value" name="0">@item.Name</button>
             </div>
         }
     </div>
 
     <div class="row d-flex">
         <div class="col-xl-4 offset-2">
-            <div class="debitAmount"></div>
+            <p id="debitAmount" class="debitAmountHolder">0</p>
         </div>
         <div class="col-xl-4 offset-1">
             <button id="addToCart">Agregar</button>
         </div>
+        <div class="col-xl-2 offset-9">
+            <button id="backMenu">Devolverse al menu</button>
+        </div>
     </div>
-
-    <script>
-        function activeCheck(target, index) {
-            if (target.value == "0") {
-                target.classList.remove("btn-outline-success");
-                target.classList.add("btn-success");
-                target.value = "1";
-            } else {
-                target.classList.remove("btn-success");
-                target.classList.add("btn-outline-success");
-                target.value = "0";
-            }
-            if (index == 1) {
-                toggleDisplay();
-                updateStatistics();
-            }
-        }
-    </script>
-
-
+    <script src="~/Scripts/createPizza.js"></script>
 </body>
