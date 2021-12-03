@@ -3,15 +3,8 @@ using PizzaJuan.Models;
 
 namespace PizzaJuan.Controllers
 {
-    public class PizzaController : Controller
+    public class PizzaController : JsonParserController
     {
-        public JsonParser JsonParser { get; set; }
-
-        public PizzaController() {
-            JsonParser = new JsonParser();
-        }
-
-
         public ActionResult CreatePizza()
         {
             ViewBag.Bases = JsonParser.ParseFromJSON("Bases.json");

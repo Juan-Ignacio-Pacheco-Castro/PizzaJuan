@@ -7,10 +7,12 @@ using PizzaJuan.Models;
 
 namespace PizzaJuan.Controllers
 {
-    public class MenuController : JsonParserController
+    public class JsonParserController : Controller
     {
-        public ActionResult Menu() {
-            return View();
+        public JsonParser JsonParser { get; set; }
+
+        public JsonParserController() {
+            JsonParser = new JsonParser();
         }
     }
 }

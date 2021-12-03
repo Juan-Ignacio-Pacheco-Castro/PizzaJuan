@@ -121,8 +121,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComboController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\DrinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsonParserController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\PizzaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -228,6 +230,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Handlers\" />
+    <Folder Include="Views\Delivery\" />
+    <Folder Include="Views\JsonParser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
