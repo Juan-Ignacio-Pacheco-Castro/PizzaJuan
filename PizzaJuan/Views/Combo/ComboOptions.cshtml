@@ -6,11 +6,17 @@
     <h1 id="title">Combos</h1>
     <div class="row d-flex">
         @foreach (var item in ViewBag.Combos) {
-        <div class="col-12 d-flex border border-3 mt-3">
-            <p class="col-9 combosDescription">@item.Name: @item.Value[0]</p>
-            <button class="col-3 combos" onclick="activeCheck()" value="@item.Value[1]">₡@item.Value[1]</button>
-        </div>
+            <div class="col-12 d-flex border border-3 mt-3">
+                <p class="col-9 combosDescription">@item.Name: @item.Value[0]</p>
+                <button class="col-3 combos" onclick="activeCheck()" value="@item.Value[1]">₡@item.Value[1]</button>
+            </div>
         }
+    </div>
+
+    <div class="row d-flex">
+        <div class="col-xl-2 offset-9">
+            <button id="backMenu">Devolverse al menu</button>
+        </div>
     </div>
     <script src="~/Scripts/createPizza.js"></script>
 </body>
