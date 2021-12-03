@@ -1,6 +1,7 @@
 ﻿let checkboxesTypes = {};
 checkboxesTypes["checkboxesSize"] = document.getElementsByClassName("size");
 checkboxesTypes["checkboxesPastaBase"] = document.getElementsByClassName("pastaBase");
+checkboxesTypes["checkboxesPizzaType"] = document.getElementsByClassName("pizzaType");
 
 function clearAllButtonsFromRow(checkboxType) {
     let checkboxes = checkboxesTypes[checkboxType];
@@ -11,11 +12,9 @@ function clearAllButtonsFromRow(checkboxType) {
     }
 }
 
-function activeCheck(target, index) {
+function activeCheck(target, index, typesOfBoxes) {
     if (index == 1) {
-        clearAllButtonsFromRow("checkboxesSize");
-    } else if (index == 2) {
-        clearAllButtonsFromRow("checkboxesPastaBase");
+        clearAllButtonsFromRow("checkboxes" + typesOfBoxes);
     }
     toggleCheck(target);
 }

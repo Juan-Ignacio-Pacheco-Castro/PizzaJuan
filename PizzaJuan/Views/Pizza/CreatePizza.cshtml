@@ -9,7 +9,7 @@
     <div class="row d-flex">
         @foreach (var item in ViewBag.Sizes) {
             <div class="col-3 d-flex">
-                <button class="size" onclick="activeCheck(this, 1)" value="@item.Value" name="0">@item.Name</button>
+                <button class="size" onclick="activeCheck(this, 1, 'Size')" value="@item.Value" name="0">@item.Name</button>
             </div>
         }
     </div>
@@ -18,7 +18,7 @@
     <div class="row d-flex">
         @foreach (var item in ViewBag.Bases) {
             <div class="col-3 d-flex">
-                <button class="pastaBase" onclick="activeCheck(this, 2)" value="@item.Value" name="0">@item.Name</button>
+                <button class="pastaBase" onclick="activeCheck(this, 1, 'PastaBase')" value="@item.Value" name="0">@item.Name</button>
             </div>
         }
     </div>
@@ -27,7 +27,7 @@
         <h1>Ingredientes de la pizza</h1>
         @foreach (var item in ViewBag.Ingredients) {
             <div class="col-3 d-flex">
-                <button class="ingredient" onclick="activeCheck(this, 3)" value="@item.Value" name="0">@item.Name</button>
+                <button class="ingredient" onclick="activeCheck(this, 0, 'Ingredient')" value="@item.Value" name="0">@item.Name</button>
             </div>
         }
     </div>
