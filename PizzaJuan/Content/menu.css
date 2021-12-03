@@ -1,0 +1,21 @@
+﻿#title {
+    color: #F48B4A;
+    text-align: center;
+}
+
+button, p {
+    background-color: white;
+    border-color: black;
+    color: black;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+    display: inline;
+}
+
+button:hover {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
