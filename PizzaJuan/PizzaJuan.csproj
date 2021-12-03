@@ -192,6 +192,7 @@
     <Content Include="Data_Files\Beverages.json" />
     <Content Include="Data_Files\Combos.json" />
     <Content Include="Data_Files\PizzaTypes.json" />
+    <Content Include="Data_Files\Restaurants.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\createPizza.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
