@@ -1,0 +1,28 @@
+﻿<head>
+    <link rel="stylesheet" href="~/Content/createPizza.css">
+</head>
+
+<body>
+    <h1 id="title">Bebidas de 2 litros</h1>
+    <div class="row d-flex offset-2">
+        @foreach (var item in ViewBag.Beverages) {
+            <div class="col-3 d-flex">
+                <button class="bebidas" onclick="activeCheck(this, 0, 'Bebidas')" value="@item.Value" name="0">@item.Name</button>
+            </div>
+        }
+    </div>
+
+    <div class="row d-flex">
+        <div class="col-xl-4 offset-2">
+            <p id="debitAmount" class="debitAmountHolder">0</p>
+        </div>
+        <div class="col-xl-4 offset-1">
+            <button id="addToCart">Agregar</button>
+        </div>
+        <div class="col-xl-2 offset-9">
+            <button id="backMenu">Devolverse al menu</button>
+        </div>
+    </div>
+    <script src="~/Scripts/createPizza.js"></script>
+</body>
+
