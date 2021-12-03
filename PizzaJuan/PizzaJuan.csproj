@@ -123,6 +123,7 @@
     <Compile Include="Controllers\ComboController.cs" />
     <Compile Include="Controllers\DrinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\PizzaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -151,6 +152,7 @@
     <Content Include="Content\createPizza.css" />
     <Content Include="Content\homePageAccess.css" />
     <Content Include="Content\layout.css" />
+    <Content Include="Content\menu.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -220,6 +222,7 @@
     <Content Include="Views\Drink\ChooseBeverage.cshtml" />
     <Content Include="Views\Pizza\ChoosePizza.cshtml" />
     <Content Include="Views\Combo\ComboOptions.cshtml" />
+    <Content Include="Views\Menu\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
