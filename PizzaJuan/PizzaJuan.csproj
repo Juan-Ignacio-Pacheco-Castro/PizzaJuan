@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComboController.cs" />
     <Compile Include="Controllers\DrinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PizzaController.cs" />
@@ -146,6 +147,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\combos.css" />
     <Content Include="Content\createPizza.css" />
     <Content Include="Content\homePageAccess.css" />
     <Content Include="Content\layout.css" />
@@ -217,6 +219,7 @@
     <Content Include="Views\Pizza\CreatePizza.cshtml" />
     <Content Include="Views\Drink\ChooseBeverage.cshtml" />
     <Content Include="Views\Pizza\ChoosePizza.cshtml" />
+    <Content Include="Views\Combo\ComboOptions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

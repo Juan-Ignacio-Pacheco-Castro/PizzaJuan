@@ -33,10 +33,9 @@ function toggleCheck(target) {
 
 function updatePrice(operation, value) {
     let debitAmountTag = document.getElementById("debitAmount");
-    let debitAmount = parseInt(debitAmountTag.innerHTML);
+    let debitAmount = parseInt(debitAmountTag.innerHTML.substring(1));
     let updatedPrice = operation(debitAmount, value);
-    debitAmountTag.innerHTML = updatedPrice;
-    console.log(updatedPrice);
+    debitAmountTag.innerHTML = '₡' + updatedPrice;
 }
 
 function sum(target, source) {
