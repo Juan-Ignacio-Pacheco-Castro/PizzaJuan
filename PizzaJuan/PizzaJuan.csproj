@@ -130,6 +130,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\JsonParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -152,9 +153,11 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\combos.css" />
     <Content Include="Content\createPizza.css" />
+    <Content Include="Content\express.css" />
     <Content Include="Content\homePageAccess.css" />
     <Content Include="Content\layout.css" />
     <Content Include="Content\menu.css" />
+    <Content Include="Content\takeout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -195,6 +198,7 @@
     <Content Include="Data_Files\Combos.json" />
     <Content Include="Data_Files\PizzaTypes.json" />
     <Content Include="Data_Files\Restaurants.json" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\createPizza.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -226,12 +230,12 @@
     <Content Include="Views\Pizza\ChoosePizza.cshtml" />
     <Content Include="Views\Combo\ComboOptions.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
+    <Content Include="Views\Delivery\Express.cshtml" />
+    <Content Include="Views\Delivery\Takeout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Handlers\" />
-    <Folder Include="Views\Delivery\" />
-    <Folder Include="Views\JsonParser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

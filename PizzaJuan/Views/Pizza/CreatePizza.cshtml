@@ -4,7 +4,6 @@
 
 <body>
     <h1 id="title">¡Crea tu pizza!</h1>
-
     <h1>Tamaño</h1>
     <div class="row d-flex">
         @foreach (var item in ViewBag.Sizes) {
@@ -43,5 +42,6 @@
             <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
         </div>
     </div>
+    @{TempData["Price"] = parseInt(document.getElementById("debitAmount").innerHTML.substring(1));}
     <script src="~/Scripts/createPizza.js"></script>
 </body>
