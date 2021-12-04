@@ -1,5 +1,8 @@
-﻿<head>
+﻿@model PizzaJuan.Models.ProductModel
+<html>
+<head>
     <link rel="stylesheet" href="~/Content/createPizza.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
@@ -37,7 +40,12 @@
             <p id="debitAmount" class="debitAmountHolder">₡0</p>
         </div>
         <div class="col-xl-4 offset-1">
-            <button id="addToCart">Agregar</button>
+            @using (Html.BeginForm("PostAddToOrder", "JsonParser", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+                @Html.AntiForgeryToken()
+                @Html.TextBoxFor(model => model.Price, new { @class = "d-none", @id = "priceModel" })
+                @Html.TextBoxFor(model => model.Description, new { @class = "d-none", @id = "descriptionModel" })
+                <button type="submit" id="addToCart">Agregar</button>
+            }
         </div>
         <div class="col-xl-2 offset-9">
             <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
@@ -45,3 +53,4 @@
     </div>
     <script src="~/Scripts/createPizza.js"></script>
 </body>
+</html>

@@ -43,14 +43,13 @@
             <p id="debitAmount" class="debitAmountHolder">₡0</p>
         </div>
         <div class="col-xl-4 offset-1">
-            <button id="addToCart">Agregar</button>
-            @using (Html.BeginForm("PostCreatePizza", "Pizza", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+            @using (Html.BeginForm("PostAddToOrder", "JsonParser", FormMethod.Post, new { enctype = "multipart/form-data" })) {
                 @Html.AntiForgeryToken()
-
-                <input type="submit" class="addToCart" value="Agregar" />
+                @Html.TextBoxFor(model => model.Price, new { @class = "d-none", @id = "priceModel" })
+                @Html.TextBoxFor(model => model.Description, new { @class = "d-none", @id = "descriptionModel" })
+                <button type="submit" id="addToCart">Agregar</button>
             }
-
-            </div>
+        </div>
         <div class="col-xl-2 offset-9">
             <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
         </div>
