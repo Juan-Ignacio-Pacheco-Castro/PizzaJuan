@@ -1,0 +1,17 @@
+﻿h1 {
+    color: #F48B4A;
+}
+
+.choosingRestaurant {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.choosingRestaurant:hover {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+

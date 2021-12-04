@@ -5,8 +5,12 @@ namespace PizzaJuan.Controllers
 {
     public class DeliveryController : JsonParserController
     {
-        public ActionResult ComboOptions() {
-            ViewBag.Combos = JsonParser.ParseFromJSON("Combos.json");
+        public ActionResult Express() {
+            return View();
+        }
+
+        public ActionResult Takeout() {
+            ViewBag.Restaurants = JsonParser.ParseFromJSON("Restaurants.json");
             return View();
         }
     }
