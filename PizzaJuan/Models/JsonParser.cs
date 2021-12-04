@@ -30,5 +30,45 @@ namespace PizzaJuan.Models {
             }
             return parsedContent;
         }
+
+        public bool WriteToJsonFile<Model>(string fileName, Model model, Func<dynamic, List<Model>> GetModelsFromJson) {
+            bool success = false;
+            string jsonString = JoinNewData<Model>(fileName, model, GetModelsFromJson);
+            try {
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/" + fileName), jsonString);
+                success = true;
+            } catch {
+                Debug.WriteLine("Error occurred");
+            }
+            return success;
+        }
+
+        public string JoinNewData<Model>(string fileName, Model model, Func<dynamic, List<Model>> GetModelsFromJson) {
+            string resultingJson = "";
+            try {
+                string[] rawJson = ExtractRawContent(fileName);
+                string json = ParseRawJson(rawJson);
+                dynamic jsonCollection = JsonConvert.DeserializeObject(json);
+                List<Model> previousModels = GetModelsFromJson(jsonCollection);
+
+                previousModels.Add(model);
+                resultingJson = JsonConvert.SerializeObject(previousModels);
+            } catch {
+                //Debug.WriteLine("Error occurred");
+                resultingJson = "Error ocurred";
+            }
+            return resultingJson;
+        }
+
+        public List<ProductModel> GetOrderFromJson(dynamic jsonCollection) {
+            List<ProductModel> order = new List<ProductModel>();
+            foreach (var element in jsonCollection) {
+                order.Add(new ProductModel {
+                    Description = element.Description,
+                    Price = element.Price
+                });
+            }
+            return order;
+        }
     }
 }
