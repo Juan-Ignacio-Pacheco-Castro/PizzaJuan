@@ -1,8 +1,15 @@
-﻿<head>
+﻿@model PizzaJuan.Models.ProductModel
+<html>
+<head>
     <link rel="stylesheet" href="~/Content/createPizza.css">
 </head>
 
 <body>
+    @if (ViewBag.Message != null) {
+        <div class="alert-danger">
+            <h3> @ViewBag.Message </h3>
+        </div>
+    }
     <h1 id="title">¡Crea tu pizza!</h1>
     <h1>Tamaño</h1>
     <div class="row d-flex">
@@ -37,11 +44,17 @@
         </div>
         <div class="col-xl-4 offset-1">
             <button id="addToCart">Agregar</button>
-        </div>
+            @using (Html.BeginForm("PostCreatePizza", "Pizza", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+                @Html.AntiForgeryToken()
+
+                <input type="submit" class="addToCart" value="Agregar" />
+            }
+
+            </div>
         <div class="col-xl-2 offset-9">
             <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
         </div>
     </div>
-    @{TempData["Price"] = parseInt(document.getElementById("debitAmount").innerHTML.substring(1));}
     <script src="~/Scripts/createPizza.js"></script>
 </body>
+</html>

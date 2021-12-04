@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
 using PizzaJuan.Models;
 
@@ -9,14 +10,23 @@ namespace PizzaJuan.Controllers
         
         public ActionResult CreatePizza()
         {
-            HttpCookie userInfo = new HttpCookie("userInfo");
-            userInfo["UserName"] = "Annathurai";
-            userInfo["UserColor"] = "Black";
-            Response.Cookies.Add(userInfo);
             ViewBag.Bases = JsonParser.ParseFromJSON("Bases.json");
             ViewBag.Sizes = JsonParser.ParseFromJSON("Sizes.json");
             ViewBag.Ingredients = JsonParser.ParseFromJSON("Ingredients.json");
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult PostCreatePizza(ProductModel product) {
+            ActionResult view = RedirectToAction("Menu", "Menu");
+            try {
+                JsonParser.WriteToJsonFile<ProductModel>("Order.json", product, JsonParser.GetOrderFromJson);
+                return view;
+            } catch {
+                view = RedirectToAction("CreatePizza", "Pizza");
+                ViewBag.Message = "Algo salió mal y no fue posible crear el funcionario";
+                return view;
+            }
         }
 
         public ActionResult ChoosePizza() {
