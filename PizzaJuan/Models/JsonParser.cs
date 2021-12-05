@@ -71,5 +71,18 @@ namespace PizzaJuan.Models {
             }
             return order;
         }
+
+        public int GetDebitAmount() {
+            List<ProductModel> order = new List<ProductModel>();
+            string[] rawJson = ExtractRawContent("Order.json");
+            string json = ParseRawJson(rawJson);
+            dynamic jsonCollection = JsonConvert.DeserializeObject(json);
+            order = GetOrderFromJson(jsonCollection);
+            int debitAmount = 0;
+            foreach (var element in order) {
+                debitAmount += element.Price;
+            }
+            return debitAmount;
+        }
     }
 }

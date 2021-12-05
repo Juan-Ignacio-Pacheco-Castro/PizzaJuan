@@ -10,6 +10,7 @@ namespace PizzaJuan.Controllers
     public class MenuController : JsonParserController
     {
         public ActionResult Menu() {
+            ViewBag.DebitAmount = JsonParser.GetDebitAmount();
             return View();
         }
     }
