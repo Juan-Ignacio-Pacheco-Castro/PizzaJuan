@@ -7,7 +7,7 @@ namespace PizzaJuan.Controllers
     {
         public ActionResult ComboOptions() {
             ViewBag.Combos = JsonParser.ParseFromJSON("Combos.json");
-            return View();
+            return View("ComboOptions");
         }
     }
 }
