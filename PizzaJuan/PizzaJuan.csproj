@@ -153,7 +153,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\combos.css" />
-    <Content Include="Content\createPizza.css" />
+    <Content Include="Content\pizzaAndBeverage.css" />
     <Content Include="Content\express.css" />
     <Content Include="Content\homePageAccess.css" />
     <Content Include="Content\layout.css" />
