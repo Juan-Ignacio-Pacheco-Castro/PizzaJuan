@@ -4,10 +4,8 @@
 }
 
 .button-center {
-    margin: auto;
     position: relative;
     left: 50%;
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 
