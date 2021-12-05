@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PizzaJuan.Models;
 
 namespace PizzaJuan.Controllers
 {
     public class PizzaController : JsonParserController
     {
-        
         public ActionResult CreatePizza()
         {
             ViewBag.ReturnUrl = Request.UrlReferrer;
@@ -41,7 +38,6 @@ namespace PizzaJuan.Controllers
         private bool PizzaIsComplete(string description) {
             dynamic pizzaTypes = JsonParser.ParseFromJSON("PizzaTypes.json");
             dynamic pizzaSizes = JsonParser.ParseFromJSON("Sizes.json");
-
             if (description != null) { 
                 foreach (var type in pizzaTypes) {
                     if (description.Contains(type.Name)) {
