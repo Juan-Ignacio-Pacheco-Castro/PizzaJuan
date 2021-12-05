@@ -6,12 +6,12 @@ namespace PizzaJuan.Controllers
     public class DeliveryController : JsonParserController
     {
         public ActionResult Express() {
-            return View();
+            return View("Express");
         }
 
         public ActionResult Takeout() {
             ViewBag.Restaurants = JsonParser.ParseFromJSON("Restaurants.json");
-            return View();
+            return View("Takeout");
         }
 
         [HttpPost]
