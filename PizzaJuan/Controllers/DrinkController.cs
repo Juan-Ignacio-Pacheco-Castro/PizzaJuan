@@ -7,7 +7,7 @@ namespace PizzaJuan.Controllers
     {
         public ActionResult ChooseBeverage() {
             ViewBag.Beverages = JsonParser.ParseFromJSON("Beverages.json");
-            return View();
+            return View("ChooseBeverage");
         }
     }
 }
