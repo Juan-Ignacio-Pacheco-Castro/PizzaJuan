@@ -130,6 +130,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeliveryModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\JsonParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,6 +202,7 @@
     <Content Include="Data_Files\Restaurants.json" />
     <Content Include="libman.json" />
     <Content Include="Data_Files\Order.json" />
+    <Content Include="Data_Files\Delivery.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\comboChoosing.js" />
     <Content Include="Scripts\createPizza.js" />
@@ -241,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DeliveryModel\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

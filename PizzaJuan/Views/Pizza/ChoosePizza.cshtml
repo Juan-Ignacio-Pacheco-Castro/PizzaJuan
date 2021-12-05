@@ -5,8 +5,12 @@
 </head>
 
 <body>
+    @if (TempData["Message"] != null) {
+        <div class="alert-danger">
+            <h3> @TempData["Message"]  </h3>
+        </div>
+    }
     <h1 id="title">Pizzas</h1>
-
     <h1>Tipo de pizza</h1>
     <div class="row d-flex">
         @foreach (var item in ViewBag.PizzaTypes) {
@@ -39,7 +43,7 @@
             <p id="debitAmount" class="debitAmountHolder">₡0</p>
         </div>
         <div class="col-xl-4 offset-1">
-            @using (Html.BeginForm("PostAddToOrder", "JsonParser", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+            @using (Html.BeginForm("PostChoosePizza", "Pizza", FormMethod.Post, new { enctype = "multipart/form-data" })) {
                 @Html.AntiForgeryToken()
                 @Html.TextBoxFor(model => model.Price, new { @class = "d-none", @id = "priceModel" })
                 @Html.TextBoxFor(model => model.Description, new { @class = "d-none", @id = "descriptionModel" })
