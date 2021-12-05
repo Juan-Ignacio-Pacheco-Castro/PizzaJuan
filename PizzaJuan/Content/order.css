@@ -30,3 +30,31 @@ button:hover {
     text-align: center;
     margin: auto;
 }
+
+.debitAmountHolder {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+    font-size: 25px;
+    text-align: center;
+}
+
+#pay {
+    background-color: white;
+    border-color: black;
+    color: black;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+}
+
+#pay:hover {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+

@@ -12,7 +12,7 @@
             @{ var count = 1;}
             @foreach (var item in ViewBag.Order) {
                 <div class="col-12 d-flex border border-2 border-dark mt-3">
-                    <p class="col-7 itemDescription mt-3">Item @count: @item.Description</p>
+                    <p class="col-7 itemDescription mt-3">Item @count: @item.Description.Remove(item.Description.Length - 1)</p>
                     <p class="price col-2 mt-2">₡@item.Price</p>
                     <button type="submit" class="col-2 mt-2" onclick="activeCheck(this)" name="@item.Description">Descartar</button>
                 </div>
@@ -21,11 +21,21 @@
         </div>
     }
 
+    <div class="row">
+        <div class="col-xl-4 offset-2">
+            <p id="debitAmount" class="debitAmountHolder">Total: @ViewBag.DebitAmount</p>
+        </div>
+        <div class="col-xl-4 offset-1">
+            <button type="submit" id="pay">Pagar</button>
+        </div>
+    </div>
+
     <div class="row d-flex">
         <div class="col-xl-2 offset-9">
             <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
         </div>
     </div>
+    <script src="~/Scripts/order.js"></script>
 </body>
 
 

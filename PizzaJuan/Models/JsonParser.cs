@@ -4,6 +4,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text;
+using System.Linq;
 
 namespace PizzaJuan.Models {
     public class JsonParser {
@@ -83,6 +84,19 @@ namespace PizzaJuan.Models {
                 debitAmount += element.Price;
             }
             return debitAmount;
+        }
+
+        public bool DeleteFromOrder(ProductModel model) {
+            List<ProductModel> order = new List<ProductModel>();
+            string[] rawJson = ExtractRawContent("Order.json");
+            string json = ParseRawJson(rawJson);
+            dynamic jsonCollection = JsonConvert.DeserializeObject(json);
+            order = GetOrderFromJson(jsonCollection);
+            var itemToRemove = order.Single(r => r.Description == model.Description);
+            order.Remove(itemToRemove);
+            var resultJson = JsonConvert.SerializeObject(order);
+            File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/Order.json"), resultJson);
+            return true;
         }
     }
 }
