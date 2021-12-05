@@ -201,6 +201,7 @@
     <Content Include="libman.json" />
     <Content Include="Data_Files\Order.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\comboChoosing.js" />
     <Content Include="Scripts\createPizza.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

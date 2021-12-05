@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Text;
 
 namespace PizzaJuan.Models {
     public class JsonParser {
         private string[] ExtractRawContent(string fileName) {
-            return File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/" + fileName));
+            return File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/" + fileName), Encoding.UTF8);
         }
 
         public string ParseRawJson(string[] content) {

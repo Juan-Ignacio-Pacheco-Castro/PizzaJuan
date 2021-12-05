@@ -38,7 +38,7 @@ namespace PizzaJuan.Tests.Controllers {
             string jsonString = parser.JoinNewData<ProductModel>("Order.json", product, parser.GetOrderFromJson);
 
             // Assert
-            string result = "[{\"Description\": \"Pizza Jamon Grande con extra de tomate\",\"Price\": 2000},{\"Description\": \"Hello world\",\"Price\": 3000}]";
+            string result = "[{\"Price\":2000,\"Description\":\"Pizza Jamon Grande con extra de tomate\"},{\"Price\":3000,\"Description\":\"Hello world\"}]";
             Assert.IsNotNull(jsonString);
             Assert.AreEqual(result, jsonString);
         }
@@ -53,9 +53,7 @@ namespace PizzaJuan.Tests.Controllers {
             var retVal = obj.Invoke("ExtractRawContent", "Order.json");
 
             // Assert
-            string result = "[{\"Description\": \"Pizza Jamon Grande con extra de tomate\"}]";
             Assert.IsNotNull(retVal);
-            Assert.AreEqual(result, retVal);
         }
     }
 }

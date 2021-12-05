@@ -16,19 +16,6 @@ namespace PizzaJuan.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult PostCreatePizza(ProductModel product) {
-            ActionResult view = RedirectToAction("Menu", "Menu");
-            try {
-                JsonParser.WriteToJsonFile<ProductModel>("Order.json", product, JsonParser.GetOrderFromJson);
-                return view;
-            } catch {
-                view = RedirectToAction("CreatePizza", "Pizza");
-                ViewBag.Message = "Algo salió mal y no fue posible crear el funcionario";
-                return view;
-            }
-        }
-
         public ActionResult ChoosePizza() {
             ViewBag.PizzaTypes = JsonParser.ParseFromJSON("PizzaTypes.json");
             ViewBag.Sizes = JsonParser.ParseFromJSON("Sizes.json");

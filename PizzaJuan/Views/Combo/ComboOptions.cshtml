@@ -1,24 +1,29 @@
-﻿<head>
+﻿@model PizzaJuan.Models.ProductModel
+<head>
     <link rel="stylesheet" href="~/Content/combos.css">
 </head>
 
 <body>
     <h1 id="title">Combos</h1>
-    <div class="row d-flex">
-        @foreach (var item in ViewBag.Combos) {
-            <div class="col-12 d-flex border border-2 border-dark mt-3">
-                <p class="col-9 combosDescription mt-3">@item.Name: @item.Value[0]</p>
-                <button class="col-3 combos mt-2" onclick="activeCheck()" value="@item.Value[1]">₡@item.Value[1]</button>
-            </div>
-        }
-    </div>
-
+    @using (Html.BeginForm("PostAddToOrder", "JsonParser", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+        @Html.AntiForgeryToken()
+        @Html.TextBoxFor(model => model.Price, new { @class = "d-none", @id = "priceModel" })
+        @Html.TextBoxFor(model => model.Description, new { @class = "d-none", @id = "descriptionModel" })
+        <div class="row d-flex">
+            @foreach (var item in ViewBag.Combos) {
+                <div class="col-12 d-flex border border-2 border-dark mt-3">
+                    <p id="@item.Name" class="col-9 combosDescription mt-3">@item.Name: @item.Value[0]</p>
+                    <button type="submit" class="col-3 combos mt-2" onclick="activeCheck(this)" value="@item.Value[1]" name="@item.Name">₡@item.Value[1]</button>
+                </div>
+            }
+        </div>
+    }
     <div class="row d-flex">
         <div class="col-xl-2 offset-9">
             <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
         </div>
     </div>
-    <script src="~/Scripts/createPizza.js"></script>
+    <script src="~/Scripts/comboChoosing.js"></script>
 </body>
 
 
