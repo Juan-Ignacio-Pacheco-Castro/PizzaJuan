@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PizzaJuan;
 using PizzaJuan.Controllers;
 
 namespace PizzaJuan.Tests.Controllers {
     [TestClass]
     public class HomeControllerTest {
         [TestMethod]
-        public void Index() {
+        public void TestIndexViewResultNotNull() {
             // Arrange
             HomeController controller = new HomeController();
 
@@ -20,6 +15,7 @@ namespace PizzaJuan.Tests.Controllers {
 
             // Assert
             Assert.IsNotNull(result);
+            Assert.AreEqual("Home page", result.ViewName);
         }
     }
 }

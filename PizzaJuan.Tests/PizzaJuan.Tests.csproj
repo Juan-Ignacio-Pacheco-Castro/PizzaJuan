@@ -89,6 +89,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ComboControllerTest.cs" />
+    <Compile Include="Controllers\DeliveryControllerTest.cs" />
+    <Compile Include="Controllers\DrinkControllerTest.cs" />
     <Compile Include="Controllers\JsonParserTest.cs" />
     <Compile Include="Controllers\PizzaControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
