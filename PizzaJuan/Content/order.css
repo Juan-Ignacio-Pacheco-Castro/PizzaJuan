@@ -1,0 +1,32 @@
+﻿h1 {
+    color: #F48B4A;
+    text-align: center;
+}
+
+button {
+    background-color: #A20021;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    margin: 0.5rem;
+    display: inline;
+}
+
+button:hover {
+    background-color: #6b2433;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+.price {
+    background-color: #F48B4A;
+    border-color: white;
+    color: white;
+    height: 3rem;
+    margin: 0.5rem;
+    display: inline;
+    text-align: center;
+    margin: auto;
+}

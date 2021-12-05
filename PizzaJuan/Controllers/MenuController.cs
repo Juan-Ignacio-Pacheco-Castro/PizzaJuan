@@ -13,5 +13,10 @@ namespace PizzaJuan.Controllers
             ViewBag.DebitAmount = JsonParser.GetDebitAmount();
             return View();
         }
+
+        public ActionResult Order() {
+            ViewBag.Order = JsonParser.GetOrderFromJson(JsonParser.ParseFromJSON("Order.json"));
+            return View();
+        }
     }
 }

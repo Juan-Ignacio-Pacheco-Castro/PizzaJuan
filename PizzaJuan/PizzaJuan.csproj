@@ -157,6 +157,7 @@
     <Content Include="Content\homePageAccess.css" />
     <Content Include="Content\layout.css" />
     <Content Include="Content\menu.css" />
+    <Content Include="Content\order.css" />
     <Content Include="Content\takeout.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -234,6 +235,7 @@
     <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\Delivery\Express.cshtml" />
     <Content Include="Views\Delivery\Takeout.cshtml" />
+    <Content Include="Views\Menu\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

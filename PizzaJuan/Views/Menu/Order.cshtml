@@ -1,0 +1,31 @@
+﻿@model PizzaJuan.Models.ProductModel
+<head>
+    <link rel="stylesheet" href="~/Content/order.css">
+</head>
+
+<body>
+    <h1 id="title">Orden</h1>
+    @using (Html.BeginForm("PostOrder", "Menu", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+        @Html.AntiForgeryToken()
+        @Html.TextBoxFor(model => model.Description, new { @class = "d-none", @id = "descriptionModel" })
+        <div class="row d-flex">
+            @{ var count = 1;}
+            @foreach (var item in ViewBag.Order) {
+                <div class="col-12 d-flex border border-2 border-dark mt-3">
+                    <p class="col-7 itemDescription mt-3">Item @count: @item.Description</p>
+                    <p class="price col-2 mt-2">₡@item.Price</p>
+                    <button type="submit" class="col-2 mt-2" onclick="activeCheck(this)" name="@item.Description">Descartar</button>
+                </div>
+                count++;
+            }
+        </div>
+    }
+
+    <div class="row d-flex">
+        <div class="col-xl-2 offset-9">
+            <button id="backMenu" onclick="location.href='/Menu/Menu'" type="button">Devolverse al menu</button>
+        </div>
+    </div>
+</body>
+
+
