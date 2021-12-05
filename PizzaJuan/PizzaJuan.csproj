@@ -237,6 +237,7 @@
     <Content Include="Views\Delivery\Express.cshtml" />
     <Content Include="Views\Delivery\Takeout.cshtml" />
     <Content Include="Views\Menu\Order.cshtml" />
+    <Content Include="Views\Menu\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

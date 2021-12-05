@@ -33,7 +33,7 @@ namespace PizzaJuan.Controllers
             }
         }
 
-        public ActionResult Buy() {
+        public ActionResult Receipt() {
             ViewBag.Order = JsonParser.GetOrderFromJson(JsonParser.ParseFromJSON("Order.json"));
             return View();
         }

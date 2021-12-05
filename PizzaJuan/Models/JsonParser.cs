@@ -86,7 +86,7 @@ namespace PizzaJuan.Models {
             return debitAmount;
         }
 
-        public bool DeleteFromOrder(ProductModel model) {
+        public void DeleteFromOrder(ProductModel model) {
             List<ProductModel> order = new List<ProductModel>();
             string[] rawJson = ExtractRawContent("Order.json");
             string json = ParseRawJson(rawJson);
@@ -96,7 +96,10 @@ namespace PizzaJuan.Models {
             order.Remove(itemToRemove);
             var resultJson = JsonConvert.SerializeObject(order);
             File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/Order.json"), resultJson);
-            return true;
+        }
+
+        public void ClearOrder() {
+            File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/Order.json"), "[]");
         }
     }
 }

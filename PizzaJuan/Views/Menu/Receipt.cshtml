@@ -1,0 +1,28 @@
+﻿@model PizzaJuan.Models.ProductModel
+<head>
+    <link rel="stylesheet" href="~/Content/order.css">
+</head>
+
+<body>
+    <h1 id="title">¡Gracias por su compra!</h1>
+    <div class="row d-flex">
+        @{ var count = 1;}
+        @foreach (var item in ViewBag.Order) {
+            <div class="col-12 d-flex border border-2 border-dark mt-3">
+                <p class="col-10 itemDescription mt-3">Item @count: @item.Description.Remove(item.Description.Length - 1)</p>
+                <p class="price col-2 m-auto">₡@item.Price</p>
+            </div>
+            count++;
+        }
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4 offset-2">
+            <p id="debitAmount" class="debitAmountHolder">Total: @ViewBag.DebitAmount</p>
+        </div>
+        <div class="col-xl-4 offset-1">
+            <button type="submit" id="pay" onclick="location.href='/Home/Index'">Finalizar</button>
+        </div>
+    </div>
+    <script src="~/Scripts/receipt.js"></script>
+</body>
