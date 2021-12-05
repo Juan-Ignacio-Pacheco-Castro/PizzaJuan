@@ -56,7 +56,6 @@ namespace PizzaJuan.Models {
                 previousModels.Add(model);
                 resultingJson = JsonConvert.SerializeObject(previousModels);
             } catch {
-                //Debug.WriteLine("Error occurred");
                 resultingJson = "Error ocurred";
             }
             return resultingJson;
@@ -71,6 +70,16 @@ namespace PizzaJuan.Models {
                 });
             }
             return order;
+        }
+
+        public List<DeliveryModel> GetDeliveryFromJson(dynamic jsonCollection) {
+            List<DeliveryModel> delivery = new List<DeliveryModel>();
+            foreach (var element in jsonCollection) {
+                delivery.Add(new DeliveryModel {
+                    Type = element.Type
+                });
+            }
+            return delivery;
         }
 
         public int GetDebitAmount() {
@@ -100,6 +109,7 @@ namespace PizzaJuan.Models {
 
         public void ClearOrder() {
             File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/Order.json"), "[]");
+            File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data_Files/Delivery.json"), "[]");
         }
     }
 }

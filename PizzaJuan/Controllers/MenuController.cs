@@ -17,24 +17,20 @@ namespace PizzaJuan.Controllers
         public ActionResult Order() {
             ViewBag.Order = JsonParser.GetOrderFromJson(JsonParser.ParseFromJSON("Order.json"));
             ViewBag.DebitAmount = JsonParser.GetDebitAmount();
+            ViewBag.Delivery = JsonParser.GetDeliveryFromJson(JsonParser.ParseFromJSON("Delivery.json"));
             return View();
         }
 
         [HttpPost]
         public ActionResult PostOrder(ProductModel product) {
             ActionResult view = RedirectToAction("Order", "Menu");
-            try {
-                JsonParser.DeleteFromOrder(product);
-                return view;
-            } catch {
-                //view = RedirectToAction("CreatePizza", "Pizza");
-                //ViewBag.Message = "Algo salió mal y no fue posible crear el funcionario";
-                return view;
-            }
+            JsonParser.DeleteFromOrder(product);
+            return view;
         }
 
         public ActionResult Receipt() {
             ViewBag.Order = JsonParser.GetOrderFromJson(JsonParser.ParseFromJSON("Order.json"));
+            ViewBag.Delivery = JsonParser.GetDeliveryFromJson(JsonParser.ParseFromJSON("Delivery.json"));
             return View();
         }
     }

@@ -13,5 +13,12 @@ namespace PizzaJuan.Controllers
             ViewBag.Restaurants = JsonParser.ParseFromJSON("Restaurants.json");
             return View();
         }
+
+        [HttpPost]
+        public ActionResult PostDelivery(DeliveryModel delivery) {
+            ActionResult view = RedirectToAction("Menu", "Menu");
+            JsonParser.WriteToJsonFile<DeliveryModel>("Delivery.json", delivery, JsonParser.GetDeliveryFromJson);
+            return view;
+        }
     }
 }

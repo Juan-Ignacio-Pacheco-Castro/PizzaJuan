@@ -1,4 +1,5 @@
-﻿<head>
+﻿@model PizzaJuan.Models.DeliveryModel
+<head>
     <link rel="stylesheet" href="~/Content/express.css">
 </head>
 
@@ -12,7 +13,7 @@
 
         <div class="col-4">
             <span class="small-font fw-bold">Cantón</span>
-            <input id="canton" class="form-control"/>
+            <input id="canton" class="form-control" />
         </div>
 
         <div class="col-4">
@@ -32,8 +33,11 @@
     </div>
     <div class="row d-flex">
         <div class="col-xl-4 offset-4">
-            <button onclick="location.href='/Menu/Menu'" type="button">Continuar con mi orden</button>
+            @using (Html.BeginForm("PostDelivery", "Delivery", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+                @Html.AntiForgeryToken()
+                @Html.TextBoxFor(model => model.Type, new { @class = "d-none", @Value = "Express"})
+                <button type="submit">Continuar con mi orden</button>
+            }
         </div>
     </div>
-    <script src="~/Scripts/express.js" type="text/javascript"></script>
 </body>
