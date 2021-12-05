@@ -3,14 +3,10 @@
     text-align: center;
 }
 
-button, p {
+button, #amount {
     background-color: white;
-    border-color: black;
-    color: black;
     height: 3rem;
-    width: 16rem;
     margin: 0.5rem;
-    display: inline;
 }
 
 button:hover {

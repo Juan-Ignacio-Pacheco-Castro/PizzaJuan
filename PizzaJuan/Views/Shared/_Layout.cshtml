@@ -25,11 +25,31 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year</p>
-        </footer>
     </div>
+
+    <footer>
+        <div class="row" style="padding: 20px; margin-top: 45px; background-color: #F48B4A;">
+            <div class="col-4">
+                <p class="small-font fw-bold">Teléfonos</p>
+                <p>8793-0492</p>
+                <p>2233-9485</p>
+                <p>8493-3022</p>
+            </div>
+
+            <div class="col-4">
+                <p class="small-font fw-bold">Dirección</p>
+                <p>500 Metros sur del</p>
+                <p>Centro Comercial Guadalupe</p>
+            </div>
+
+            <div class="col-4">
+                <p class="small-font fw-bold">Horarios</p>
+                <p>L-V: 9:00 am a 8:00 pm</p>
+                <p>S y D: 9:00 am a 4:00 pm</p>
+            </div>
+    </div>
+    </footer>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrapJS")
     @RenderSection("scripts", required: false)
