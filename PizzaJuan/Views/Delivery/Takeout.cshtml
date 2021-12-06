@@ -10,7 +10,7 @@
     <h1>Escoger el restaurante para recoger</h1>
     @using (Html.BeginForm("PostDelivery", "Delivery", FormMethod.Post, new { enctype = "multipart/form-data" })) {
         @Html.AntiForgeryToken()
-        @Html.TextBoxFor(model => model.Type, new { @class = "d-none", @Value = "Takeout" })
+        @Html.TextBoxFor(model => model.Type, new { @class = "d-none", @Value = "Para llevar" })
         <div class="row d-flex">
             @foreach (var item in ViewBag.Restaurants) {
                 <button class="choosingRestaurant col-12 d-flex border border-2 border-dark mt-3" type="submit">

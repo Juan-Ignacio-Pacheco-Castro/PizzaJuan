@@ -15,7 +15,6 @@ namespace PizzaJuan.Tests.Controllers {
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("Home page", result.ViewName);
         }
     }
 }
