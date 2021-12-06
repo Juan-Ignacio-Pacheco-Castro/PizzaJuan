@@ -92,7 +92,9 @@
     <Compile Include="Controllers\ComboControllerTest.cs" />
     <Compile Include="Controllers\DeliveryControllerTest.cs" />
     <Compile Include="Controllers\DrinkControllerTest.cs" />
+    <Compile Include="Controllers\JsonParserControllerTest.cs" />
     <Compile Include="Controllers\JsonParserTest.cs" />
+    <Compile Include="Controllers\MenuControllerTest.cs" />
     <Compile Include="Controllers\PizzaControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
