@@ -5,7 +5,7 @@
 
 <body>
     <h1 id="title">Orden</h1>
-    @using (Html.BeginForm("PostOrder", "Menu", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+    @using (Html.BeginForm("PostDeleteFromOrder", "Menu", FormMethod.Post, new { enctype = "multipart/form-data" })) {
         @Html.AntiForgeryToken()
         @Html.TextBoxFor(model => model.Description, new { @class = "d-none", @id = "descriptionModel" })
         <div class="row d-flex">

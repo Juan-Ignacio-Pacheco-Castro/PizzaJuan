@@ -7,18 +7,18 @@ namespace PizzaJuan.Controllers
     {
         public ActionResult Menu() {
             ViewBag.DebitAmount = JsonParser.GetDebitAmount();
-            return View();
+            return View("Menu");
         }
 
         public ActionResult Order() {
             ViewBag.Order = JsonParser.GetOrderFromJson(JsonParser.ParseFromJSON("Order.json"));
             ViewBag.DebitAmount = JsonParser.GetDebitAmount();
             ViewBag.Delivery = JsonParser.GetDeliveryFromJson(JsonParser.ParseFromJSON("Delivery.json"));
-            return View();
+            return View("Order");
         }
 
         [HttpPost]
-        public ActionResult PostOrder(ProductModel product) {
+        public ActionResult PostDeleteFromOrder(ProductModel product) {
             ActionResult view = RedirectToAction("Order", "Menu");
             JsonParser.DeleteFromOrder(product);
             return view;
@@ -27,7 +27,7 @@ namespace PizzaJuan.Controllers
         public ActionResult Receipt() {
             ViewBag.Order = JsonParser.GetOrderFromJson(JsonParser.ParseFromJSON("Order.json"));
             ViewBag.Delivery = JsonParser.GetDeliveryFromJson(JsonParser.ParseFromJSON("Delivery.json"));
-            return View();
+            return View("Receipt");
         }
     }
 }
