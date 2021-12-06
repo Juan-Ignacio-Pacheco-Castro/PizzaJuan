@@ -7,18 +7,17 @@ namespace PizzaJuan.Controllers
     {
         public ActionResult CreatePizza()
         {
-            ViewBag.ReturnUrl = Request.UrlReferrer;
             ViewBag.Bases = JsonParser.ParseFromJSON("Bases.json");
             ViewBag.Sizes = JsonParser.ParseFromJSON("Sizes.json");
             ViewBag.Ingredients = JsonParser.ParseFromJSON("Ingredients.json");
-            return View();
+            return View("CreatePizza");
         }
 
         public ActionResult ChoosePizza() {
             ViewBag.PizzaTypes = JsonParser.ParseFromJSON("PizzaTypes.json");
             ViewBag.Sizes = JsonParser.ParseFromJSON("Sizes.json");
             ViewBag.Ingredients = JsonParser.ParseFromJSON("Ingredients.json");
-            return View();
+            return View("ChoosePizza");
         }
 
         [HttpPost]
